@@ -1,0 +1,33 @@
+= Java-Übung: Functional Interfaces für Fortgeschrittene
+Hanan Mehic, 2024-10-29
+
+== Einführung
+
+Diese Übung vertieft das Verständnis für Functional Interfaces und deren Anwendung in Java. Ziel ist es, komplexere Logik mithilfe von Lambda-Ausdrücken und benutzerdefinierten Functional Interfaces umzusetzen.
+
+== Aufgabe
+
+Erstellen Sie eine Anwendung, die verschiedene mathematische Operationen auf Listen von Zahlen anwendet. Diese Operationen sollen flexibel erweiterbar sein und durch Functional Interfaces umgesetzt werden.
+
+== Anforderungen
+
+1. **Definieren Sie ein Functional Interface** namens `MathOperation`, das eine Methode `double apply(double a, double b)` besitzt.
+2. **Erstellen Sie mindestens drei Implementierungen** des `MathOperation`-Interfaces:
+- **Addition**: Summiert zwei Zahlen.
+- **Multiplikation**: Multipliziert zwei Zahlen.
+- **Exponentiation**: Hebt die erste Zahl auf die Potenz der zweiten Zahl.
+3. **Erstellen Sie eine Klasse** `MathProcessor`, die:
+- Eine Methode `process(List<Double> numbers, MathOperation operation)` bereitstellt, welche die Operation auf alle aufeinanderfolgenden Paare der Liste anwendet (z. B. `process([1,2,3], addition) -> 6`).
+- Ein Interface `Filter` akzeptiert, das eine Bedingung definiert, nach der bestimmte Zahlen der Liste vor der Verarbeitung gefiltert werden (z. B. nur positive Zahlen).
+
+== Bonus-Aufgaben
+
+- Implementieren Sie zusätzlich das Functional Interface `Filter`, welches eine Methode `boolean apply(double number)` enthält.
+- **Filter**: Erstellen Sie Implementierungen, die nur gerade, nur ungerade oder nur positive Zahlen zulassen.
+
+== Hinweise
+
+- Verwenden Sie Lambda-Ausdrücke, um die Interfaces direkt bei der Übergabe an `process()` zu implementieren.
+- Überlegen Sie, wie Sie Java's Standard Functional Interfaces (`Predicate`, `BinaryOperator` etc.) nutzen könnten, um Wiederholungen im Code zu minimieren.
+
+
